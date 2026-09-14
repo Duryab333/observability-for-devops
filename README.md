@@ -86,7 +86,7 @@ I used Docker Compose to run the stack. Prometheus collects metrics from Node Ex
 
 ## 3. Problems I actually encountered — THIS is valuable in interviews
 
-Docker volume mounting error: Prometheus/Loki expected a file, but I accidentally created directories with .yml filenames → identified the file-vs-directory mismatch and corrected the bind mounts.
+Docker volume mounting error: Prometheus/Loki expected a file → identified the file-vs-directory mismatch and corrected the bind mounts.
 Loki failed to start: Loki 3 rejected my schema v12 configuration because of structured metadata → investigated the startup error and added allow_structured_metadata: false.
 Promtail failed: at least one client config must be provided → traced the issue through the mounted configuration path and corrected the config filename/mount/command.
 Prometheus target DOWN: configured cadvisor:9100 for Node Exporter → understood Docker service DNS and corrected it to node-exporter:9100.
